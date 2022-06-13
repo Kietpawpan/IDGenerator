@@ -2,7 +2,7 @@
 
 This is my second app for public service.
 
-__Goal:__ To generate a User ID for accessing the e-tracking service
+__Goal:__ To generate a case ID for each customer who wants to track the progress of his or her case. The ID allows the customer to access the progress report associated with the case. 
 
 __Input:__ The first name and the surname (String in Thai) of the user
 
@@ -10,8 +10,8 @@ __Output:__ The User ID text, which combines the first English chracter of name,
 
 __Steps:__
 
-1. Import the tkinter module for creating a desktop app.
-2. Import datetime module for getting the present time
+1. Import the tkinter module for creating the graphic user interface (GUI) of this app. 
+2. Import the datetime module for getting the present time
 3. Set the time format as yyyymmddhhmm
 4. Get the value yymmddhhmm as the user ID suffix
 5. Create a new function called "Show Output", which gets integer number transformed from the text number input
