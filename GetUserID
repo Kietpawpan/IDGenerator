@@ -1,0 +1,89 @@
+# Import the tkinter module for creating a desktop app.
+import tkinter
+from tkinter import *
+
+from datetime import datetime
+now = datetime.now()
+issueDate = now.strftime("%Y%m%d%H%M")
+userIDNumber = issueDate[2:10]
+
+# Create a new function called "Show Output", which gets integer number transformed from the text number input
+def show_output():
+# Get the values from the two input boxes
+    userName = userName_input.get()
+    surName = surName_input.get()
+
+# Create a new dictionary for translate the username and surname into English
+# Avoid I which seems like 1 and use various English characters for Thai vowels
+    myThaiDict = "กขคฆงจฉชซฌญฎฏฐฑฒณดตถทธนบปผฝพฟภมยรลวศษสหฬอฮโใไฤเแ"
+    myEnglishDict = "KKKKNCCCSCYDTTTTNDTTTTNBPPFPFPMYRLWSSSHLAHZEURGV"
+
+# Create separate dictionary tables for username and surname translation
+    myNameTable = userName.maketrans(myThaiDict, myEnglishDict)
+    mySurnameTable = surName.maketrans(myThaiDict, myEnglishDict)
+
+# Translate the username and put the value in a new variable called transName
+    transName = userName.translate(myNameTable)
+
+# Translate the surname and put the value in a new variable called transSurname
+    transSurname = surName.translate(mySurnameTable)
+
+# Set the value for the output, which combines the first characters of the translated
+# username and surname plus the Integer ID
+    output = '' + transName[0] + transSurname[0] + str(userIDNumber)
+
+# Show the output as text
+    output_label.configure(
+        text=output,
+        # Set the output's font as Arial with the size of 25
+        font=('Arial', 20)
+    )
+
+# Create a new window for my application
+window = Tk()
+
+# Set the size of the app window as 400 x 400 px
+window.geometry("400x200")
+
+# Set the name of my app as Lotto 2022.
+window.title("jTech")
+
+# Set the text on what this app does and show it in the window with space between lines at 20 px.
+title_label = tkinter.Label(master=window, text='ID Generator')
+title_label.place(x=200, y=20)
+
+# Create two text messages to describe the two input boxes, with font size = 12
+userName_text = Label(text="ชื่อผู้ยื่นคำขอ", font=("", 10))
+surName_text = Label(text="นามสกุล", font=("",10))
+
+# Set the locations of the text
+userName_text.place(x=15,y=40)
+surName_text.place(x=15,y=120)
+
+# Set the type of input data as String (plain text)
+firstName = StringVar()
+lastName = StringVar()
+
+# Create an input box for the first name of the user, and set its location
+userName_input = tkinter.Entry(textvariable=firstName, width=20, font=("",12))
+userName_input.place(x=15,y=20)
+
+# Create an input box for the surname, and set its location
+surName_input = tkinter.Entry(textvariable=lastName, width=20, font=("",12))
+surName_input.place(x=15,y=100)
+
+# Add a button, named 'Get ID', and add this command: 'show_output'.
+# Set the button size as
+go_button = tkinter.Button(
+    master=window, text='Get ID',
+    command=show_output, width=15, height=2
+)
+# Pack the button to the screen
+go_button.place(x=200,y=50)
+
+# Show the output on the screen with 20 px space vertically
+output_label = tkinter.Label(master=window)
+output_label.place(x=200,y=150)
+
+# Show the app window
+window.mainloop()
