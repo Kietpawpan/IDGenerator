@@ -2,7 +2,7 @@
 
 This is my second app for public service.
 
-__Goal:__ To generate a case ID for each customer who wants to track the progress of his or her case. The ID allows the customer to access the progress report associated with the case. 
+__Goal:__ To generate a case ID for the customer to track the progress of his or her case. The ID allows him or her to access the progress report of the case. 
 
 __Input:__ The first name and the surname (String in Thai) of the user
 
