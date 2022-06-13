@@ -10,8 +10,8 @@ __Output:__ A unique case ID, which combines the first English chracter of the n
 
 __Steps:__
 
-1. Import the tkinter module for creating the graphic user interface (GUI) of this app. 
-2. Import the datetime module for getting the present time
+1. Import the tkinter module for creating the graphic user interface (GUI) of this app
+2. Import the datetime module for getting the current time from the computer clock
 3. Set the time format as yyyymmddhhmm
 4. Get the value yymmddhhmm as the user ID suffix
 5. Create a new function called "Show Output", which gets integer number transformed from the text number input
