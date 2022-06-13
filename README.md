@@ -4,9 +4,9 @@ This is my second app for public service.
 
 __Goal:__ To generate a case ID for the customer to track the progress of his or her case. The ID allows him or her to access the progress report of the case. 
 
-__Input:__ The first name and the surname (String in Thai) of the user
+__Input:__ The first name and the surname (String in Thai) of the customer, and the current time from the computer clock.
 
-__Output:__ The User ID text, which combines the first English chracter of name, surname, and a time-based serial number 
+__Output:__ A unique case ID, which combines the first English chracter of the name, surname, and 8-digit time-based serial number. 
 
 __Steps:__
 
