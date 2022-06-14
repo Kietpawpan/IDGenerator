@@ -5,6 +5,9 @@ import os
 import tkinter
 from tkinter import *
 
+# Import message box module
+from tkinter import messagebox
+
 # Import the datetime module for creating a time-based serial number
 from datetime import datetime
     # Let now is the present time read from the system clock
@@ -71,12 +74,14 @@ def save_ID():
     customerIDFile.write(output + "\n")
     # Close the file
     customerIDFile.close()
+    # Show the message box to notify the user the Save ID is done.
+    messagebox.showinfo("Save ID","Done!")
 
-# Create a Check ID function
+# Create a Check ID function. To open the customer ID file
 def checkID():
-    # Define the file variable
+    # Define which file is the customer ID file
     customerIDFile = "CustomerID.txt"
-    # Use the default editor to open the text file
+    # Use the default editor to open the file
     os.startfile(customerIDFile)
 
 # Create a graphic user interface (GUI) for this application
@@ -141,5 +146,11 @@ output_label.place(x=220,y=220)
 
 # Show the app window
 window.mainloop()
+
+# Design a message box to show after the user click the Save ID button 
+saveInfoBox = Tk()
+saveInfoBox.geometry("300x200")
+saveInfoBox.mainloop()
+
 # Prevent the console window from opening, by saving this file as IDGen.pyw instead of .py
 # Store this file on Desktop or any folder for ease.
