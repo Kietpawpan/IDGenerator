@@ -1,12 +1,12 @@
 # IDGenerator
 
-__Problem:__ People submit a number of cases that demand official correspondance. Each case should have a sequential case ID as a quick reference for checking the status of the case afterward. Officials can assign the case ID, but the process is manual, slow, non-systematic, and not quite easy.  
+__Problem:__ People submit a number of cases that demand official correspondance from my organization. Each case was given a particular ID for the public to track the status of the case. Officials assigned the case IDs manually, and the process is slow, non-standard, and not super easy.  
 
-__Goal:__ To generate a case ID for the customer to track the progress of his or her case. The ID allows him or her to access the progress report of the case. 
+__Goal:__ To generate an ID for each case in a super fast and super easy way.  
 
-__Input:__ The first name and the surname (String in Thai) of the customer, and the current time from the computer clock.
+__Input:__ The first name and the surname (in Thai) of the customer, and the timestampt from the system clock.
 
-__Output:__ A unique case ID, which combines the first English chracter of the name, surname, and 8-digit time-based serial number. 
+__Output:__ A unique case ID, which combines the single digit name-surname, and 10-digit time-based serial number. 
 
 __Steps:__
 
