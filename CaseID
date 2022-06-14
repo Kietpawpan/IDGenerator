@@ -5,7 +5,7 @@ from tkinter import *
 from datetime import datetime
 now = datetime.now()
 issueDate = now.strftime("%Y%m%d%H%M")
-userIDNumber = issueDate[2:10]
+userIDNumber = issueDate[2:12]
 
 # Create a new function called "Show Output", which gets integer number transformed from the text number input
 def show_output():
@@ -38,12 +38,28 @@ def show_output():
         # Set the output's font as Arial with the size of 25
         font=('Arial', 20)
     )
-
+# Create a save function
+def save_ID():
+    userName = userName_input.get()
+    surName = surName_input.get()
+    myThaiDict = "กขคฆงจฉชซฌญฎฏฐฑฒณดตถทธนบปผฝพฟภมยรลวศษสหฬอฮโใไฤเแ"
+    myEnglishDict = "KKKKNCCCSCYDTTTTNDTTTTNBPPFPFPMYRLWSSSHLAHZEURGV"
+    myNameTable = userName.maketrans(myThaiDict, myEnglishDict)
+    mySurnameTable = surName.maketrans(myThaiDict, myEnglishDict)
+    transName = userName.translate(myNameTable)
+    transSurname = surName.translate(mySurnameTable)
+    output = '' + transName[0] + transSurname[0] + str(userIDNumber)
+    customerIDFile = open("customerID.txt","a")
+    timeStampt = str(datetime.now())
+    customerIDFile.write(timeStampt + "\n")
+    customerIDFile.write(" ")
+    customerIDFile.write(output + "\n")
+    customerIDFile.close()
 # Create a new window for my application
 window = Tk()
 
 # Set the size of the app window as 400 x 400 px
-window.geometry("400x200")
+window.geometry("450x200")
 
 # Set the name of my app as Lotto 2022.
 window.title("jTech")
@@ -78,8 +94,16 @@ go_button = tkinter.Button(
     master=window, text='Get ID',
     command=show_output, width=15, height=2
 )
-# Pack the button to the screen
+# Place the button on the screen
 go_button.place(x=200,y=50)
+
+# Add another button for saving the ID
+save_button = tkinter.Button(
+    master=window, text='Save ID',
+    command=save_ID, width=15, height=2
+)
+# Place the button on the screen
+save_button.place(x=300,y=50)
 
 # Show the output on the screen with 20 px space vertically
 output_label = tkinter.Label(master=window)
