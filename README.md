@@ -1,6 +1,6 @@
 # IDGenerator
 
-The ID Generator allows officials to issue case IDs (12 digits long) for users to search for information on applications in the Service Link Center, Ministry of Natural Resources and Environment. Officials can store and check the issue timestampts, customer names, and case IDs in the text file.   
+The ID Generator allows officials to issue case IDs (12 digits long) for users to search for information on applications in the Service Link Center, Ministry of Natural Resources and Environment. Officials can store and check the issue date/time, customer names, and case IDs in the text file.   
 
 __Goal:__ To make it super easy to issue and check the case ID for each case.  
 
