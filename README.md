@@ -50,6 +50,9 @@ from tkinter import *
 # Import message box module
 from tkinter import messagebox
 
+# Import the webbrowser module
+import webbrowser
+
 # Import the datetime module for creating a time-based serial number
 from datetime import datetime
     # Let now is the present time read from the system clock
@@ -105,13 +108,16 @@ def save_ID():
     output = '' + transName[0] + transSurname[0] + str(userIDNumber)
     # Create a log file (.txt) that records the time and the output ID
     # First, open the file customerID.text for appending (To add new info, not overwrite).
-    customerIDFile = open("customerID.txt","a")
+    # Allow Thai text to write in the text file (utf-8)
+    customerIDFile = open("customerID.txt","a", encoding="utf-8")
     # Create a timestampt
     timeStampt = str(datetime.now())
     # Write timestampt in the new line
     customerIDFile.write(timeStampt + "\n")
     # Indend in the next line
     customerIDFile.write(" ")
+    # Write the customer name and surname in Thai
+    customerIDFile.write(userName + " ")
     # Write the output (or customer ID) in the new line
     customerIDFile.write(output + "\n")
     # Close the file
@@ -125,6 +131,11 @@ def checkID():
     customerIDFile = "CustomerID.txt"
     # Use the default editor to open the file
     os.startfile(customerIDFile)
+
+# Create Open Readme function. To open the url
+def openReadMe():
+    # Define which url to pen
+    webbrowser.open('https://github.com/Kietpawpan/IDGenerator#readme')
 
 # Create a graphic user interface (GUI) for this application
 window = Tk()
@@ -181,10 +192,16 @@ check_button = tkinter.Button(master=window, text='Check ID',
 # Place the button on the screen
 check_button.place(x=220,y=150)
 
+# Add Readme button
+readme_button = tkinter.Button(master=window, text='Read Me',
+    command=openReadMe, width=15, height=2
+)
+# Place the button on the screen
+readme_button.place(x=220,y=200)
 
 # Show the output on the screen with 20 px space vertically
 output_label = tkinter.Label(master=window)
-output_label.place(x=220,y=220)
+output_label.place(x=220,y=250)
 
 # Show the app window
 window.mainloop()
