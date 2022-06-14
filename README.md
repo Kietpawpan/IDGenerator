@@ -39,6 +39,7 @@ __Steps:__
 27. Show the app window
 
 __Algorithm & Code:__
+```
 # Import the os module for opening a file in the computer
 import os
 
@@ -196,3 +197,4 @@ saveInfoBox.mainloop()
 # Prevent the console window from opening, by saving this file as IDGen.pyw instead of .py
 # Store this file on Desktop or any folder for ease.
 # This program is developed by Monte & Jeerawish Kietpawpan
+```
