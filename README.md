@@ -1,6 +1,6 @@
 # IDGenerator
 
-This is my second app for public service.
+__Problem:__ People submit a number of cases that demand official correspondance. Each case should have a sequential case ID as a quick reference for checking the status of the case afterward. Officials can assign the case ID, but the process is manual, slow, non-systematic, and not quite easy.  
 
 __Goal:__ To generate a case ID for the customer to track the progress of his or her case. The ID allows him or her to access the progress report of the case. 
 
