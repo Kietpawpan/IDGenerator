@@ -1,17 +1,17 @@
 # IDGenerator
 
-__Problem:__ People submit a number of cases that demand official correspondance from my organization. Each case was given a particular ID for the public to track the status of the case. Officials assigned the case IDs manually, and the process is slow, non-standard, and not super easy.  
+The ID Generator allows officials to issue case IDs (12 digits long) for users to search for information on applications in the Service Link Center, Ministry of Natural Resources and Environment. Officials can store and check the issue timestampts, customer names, and case IDs in the text file.   
 
-__Goal:__ To generate an ID for each case in a super fast and super easy way.  
+__Goal:__ To make it super easy to issue and check the case ID for each case.  
 
-__Input:__ The first name and the surname (in Thai) of the customer, and the timestampt from the system clock.
+__Input:__ Customer name and surname (in Thai) and the time from the system clock.
 
-__Output:__ A unique case ID, which combines the single digit name-surname, and 10-digit time-based serial number. 
+__Output:__ Graphic user interface with four buttons (Get ID, Save ID, Check ID, and Read Me). The Get ID displays the case ID. The Save ID writes the customer name and the case ID in the text file (CustomerID.txt). The Check ID opens the text file for reading. The Read Me directs the user to the URL of the documentation of this computer program.      
 
 __Steps:__
 
-1. Import the tkinter module for creating the graphic user interface (GUI) of this app
-2. Import the datetime module for getting the current time from the computer clock
+1. Import the necessary modules from Python Library.
+2. They include os, tkinter, messagebox, datetime, and webbrowser. 
 3. Set the time format as yyyymmddhhmm
 4. Get the value yymmddhhmm as the user ID suffix
 5. Create a new function called "Show Output", which gets integer number transformed from the text number input
